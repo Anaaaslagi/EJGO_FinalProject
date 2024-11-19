@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget{
       {
         'name': 'Kampung Warna Warni Jodipan',
         'image': 'images/kampungwarnawarni.jpeg',
-        'description': 'Kampung penuh warna yang Instagrammable.',
+        'description': 'Kampung penuh warna yang Instagrammable dan sangat hits.',
         'rating': 4.6,
         'address': 'Kampung Jodipan, Malang, Jawa Timur',
         'openingHours': '08:00 - 18:00'
