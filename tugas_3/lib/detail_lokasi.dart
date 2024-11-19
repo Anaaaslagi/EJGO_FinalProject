@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 
 class DetailLokasi extends StatelessWidget {
-  const DetailLokasi ({super.key});
+ 
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Padding(
+      padding: EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      ),
+    );
   }
 }
