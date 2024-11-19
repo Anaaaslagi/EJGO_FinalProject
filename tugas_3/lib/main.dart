@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'detail_lokasi.dart';
+
 void main() {
   runApp(const MyApp());
 }
 
-class myApp extend StatefulWidget{
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context){
-    return materialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: color.white,
-      ),
-      home: WelcomeScreen
-    );
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, home: DetailLokasi());
   }
 }
