@@ -29,7 +29,6 @@ class _HomeButtomBarState extends State<HomeButtomBar> {
         setState(() {
           _currentIndex = index;
         });
-        // Use Navigator.pushReplacement to replace the current screen instead of pushing new screens
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => _pages[index]),

@@ -26,12 +26,12 @@ class HomePage extends StatelessWidget{
   final List<double> ratings = [4.5, 4.7, 4.2, 4.3, 4.8, 4.6];
 
   final List<String> descriptions = [
-    'Gunung Bromo is one of the most famous mountains in East Java, offering stunning views and amazing sunrise experiences.',
-    'Kawah Ijen is known for its turquoise crater lake and the blue fire phenomenon, a must-visit for adventurous travelers.',
-    'Kampung Warna Warni Jodipan is a colorful village in Malang that has become an Instagram-worthy destination.',
-    'Pantai Batu Bengkung is a serene beach with unique rock formations and tranquil surroundings.',
-    'Telaga Sarangan is a cool and refreshing mountain lake surrounded by beautiful scenery.',
-    'Jembatan Suramadu is a landmark bridge connecting Surabaya and Madura, offering breathtaking views at night.'
+    'Gunung Bromo adalah salah satu gunung paling terkenal di Jawa Timur, menawarkan pemandangan yang menakjubkan dan pengalaman matahari terbit yang menakjubkan.',
+    'Kawah Ijen terkenal dengan danau kawah berwarna biru kehijauan dan fenomena api biru, tempat yang wajib dikunjungi bagi para pelancong yang berjiwa petualang.',
+    'Kampung Warna Warni Jodipan adalah desa penuh warna di Malang yang telah menjadi destinasi yang layak untuk diunggah di Instagram.',
+    'Pantai Batu Bengkung adalah pantai yang tenang dengan formasi batuan yang unik dan lingkungan yang tenang.',
+    'Telaga Sarangan adalah danau pegunungan yang sejuk dan menyegarkan yang dikelilingi oleh pemandangan yang indah.',
+    'Jembatan Suramadu adalah jembatan penting yang menghubungkan Surabaya dan Madura, menawarkan pemandangan yang menakjubkan di malam hari.'
   ];
 
   final List<String> addresses = [
