@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/post_screen.dart';
-import 'package:tugas3/screens/home_screen.dart';
 
 class FavoriteScreen extends StatelessWidget {
   final List<Map<String, String>> favoritePlaces = [
