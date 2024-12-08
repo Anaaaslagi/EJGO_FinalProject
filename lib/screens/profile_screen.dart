@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/home_screen.dart';
+import 'package:tugas3/widgets/profile_app_bar.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -124,19 +125,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(
-      title: const Text("Profile"),
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          // Arahkan ke HomePage
-          Navigator.pushAndRemoveUntil(
-            context,
-            MaterialPageRoute(builder: (context) => HomePage()),
-            (route) => false, // Menghapus semua rute sebelumnya
-          );
-        },
-      ),
+      appBar: PreferredSize(
+      preferredSize: Size.fromHeight(50.0),
+      child: ProfileAppBar(),
     ),
     body: SingleChildScrollView(
       child: Column(

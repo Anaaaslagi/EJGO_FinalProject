@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/home_screen.dart';
+import 'package:tugas3/widgets/location_app_bar.dart';
 
 class LocationScreen extends StatelessWidget {
   final List<Map<String, dynamic>> locations = [
@@ -40,31 +41,10 @@ class LocationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Wisata Jawa Timur',
-          style: TextStyle(color: Colors.black),
-        ),
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: Colors.white,
-        elevation: 4,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(16),
-          ),
-        ),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            // Arahkan ke HomePage
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-              (route) => false, // Menghapus semua rute sebelumnya
-            );
-          },
-        ),
-      ),
+      appBar: PreferredSize(
+      preferredSize: Size.fromHeight(90.0),
+      child: LocationAppBar(),
+    ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView.builder(

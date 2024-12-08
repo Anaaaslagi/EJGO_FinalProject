@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas3/widgets/favorite_app_bar.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/post_screen.dart';
 import 'package:tugas3/screens/home_screen.dart';
@@ -63,21 +64,11 @@ class FavoriteScreen extends StatelessWidget {
 
  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Favorite"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            // Mengarahkan ke HomeScreen
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-              (route) => false, // Menghapus semua rute sebelumnya
-            );
-          },
-        ),
-      ),
+   return Scaffold(
+      appBar: PreferredSize(
+      preferredSize: Size.fromHeight(90.0),
+      child: FavoriteAppBar(),
+    ),
       body: ListView.builder(
         itemCount: favoritePlaces.length,
         itemBuilder: (context, index) {
