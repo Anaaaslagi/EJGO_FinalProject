@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
+import 'package:tugas3/screens/home_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -122,122 +123,134 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Profile"),
+  return Scaffold(
+    appBar: AppBar(
+      title: const Text("Profile"),
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+          // Arahkan ke HomePage
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => HomePage()),
+            (route) => false, // Menghapus semua rute sebelumnya
+          );
+        },
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-            // Foto Profil
-            const CircleAvatar(
-              radius: 70,
-              backgroundImage: AssetImage("images/blawan.jpeg"),
+    ),
+    body: SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+          // Foto Profil
+          const CircleAvatar(
+            radius: 70,
+            backgroundImage: AssetImage("images/blawan.jpeg"),
+          ),
+          const SizedBox(height: 15),
+          // Nama Pengguna
+          Text(
+            fullName,
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
-            const SizedBox(height: 15),
-            // Nama Pengguna
-            Text(
-              fullName,
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+          ),
+          const SizedBox(height: 8),
+          const Text(
+            'Mahasiswa Semester 5',
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.grey,
+            ),
+          ),
+          const SizedBox(height: 20),
+          // Tentang Saya
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
               ),
-            ),
-            const SizedBox(height: 8),
-            const Text(
-              'Mahasiswa Semester 5',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
-            const SizedBox(height: 20),
-            // Tentang Saya
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                elevation: 4,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'About Me',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+              elevation: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'About Me',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(height: 10),
-                      Text(
-                        aboutMe,
-                        style: const TextStyle(fontSize: 16),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      aboutMe,
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          // Informasi Kontak
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 4,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Contact Information',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(height: 10),
+                    contactInfo(Icons.email, email),
+                    const SizedBox(height: 10),
+                    contactInfo(Icons.phone, phoneNumber),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            // Informasi Kontak
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Card(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                elevation: 4,
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Contact Information',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      contactInfo(Icons.email, email),
-                      const SizedBox(height: 10),
-                      contactInfo(Icons.phone, phoneNumber),
-                    ],
-                  ),
-                ),
+          ),
+          const SizedBox(height: 20),
+          // Tombol Edit Profile
+          ElevatedButton(
+            onPressed: () {
+              _showEditProfileModal(context);
+            },
+            style: ElevatedButton.styleFrom(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
-            const SizedBox(height: 20),
-            // Tombol Edit Profile
-            ElevatedButton(
-              onPressed: () {
-                _showEditProfileModal(context);
-              },
-              style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-              child: const Text(
-                'Edit Profile',
-                style: TextStyle(fontSize: 16),
-              ),
+            child: const Text(
+              'Edit Profile',
+              style: TextStyle(fontSize: 16),
             ),
-            const SizedBox(height: 20),
-          ],
-        ),
+          ),
+          const SizedBox(height: 20),
+        ],
       ),
-      bottomNavigationBar: HomeButtomBar(),
-    );
-  }
+    ),
+    bottomNavigationBar: HomeButtomBar(),
+  );
+}
+
 
   Widget contactInfo(IconData icon, String info) {
     return Row(

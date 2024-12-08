@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/post_screen.dart';
+import 'package:tugas3/screens/home_screen.dart';
 
 class FavoriteScreen extends StatelessWidget {
   final List<Map<String, String>> favoritePlaces = [
@@ -60,21 +61,38 @@ class FavoriteScreen extends StatelessWidget {
     },
   ];
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Favorite")),
+      appBar: AppBar(
+        title: const Text("Favorite"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            // Mengarahkan ke HomeScreen
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+              (route) => false, // Menghapus semua rute sebelumnya
+            );
+          },
+        ),
+      ),
       body: ListView.builder(
         itemCount: favoritePlaces.length,
         itemBuilder: (context, index) {
           final place = favoritePlaces[index];
           return Card(
             color: Colors.white,
-            margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
             child: ListTile(
-              contentPadding: EdgeInsets.all(8),
-              leading: Image.asset(place["image"]!,
-                  width: 80, height: 80, fit: BoxFit.cover),
+              contentPadding: const EdgeInsets.all(8),
+              leading: Image.asset(
+                place["image"]!,
+                width: 80,
+                height: 80,
+                fit: BoxFit.cover,
+              ),
               title: Text(place["name"]!),
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -84,7 +102,7 @@ class FavoriteScreen extends StatelessWidget {
                 ],
               ),
               trailing: TextButton(
-                child: Text("Lebih lanjut →"),
+                child: const Text("Lebih lanjut →"),
                 onPressed: () {
                   // Mengarahkan ke PostScreen dengan data terkait
                   Navigator.push(

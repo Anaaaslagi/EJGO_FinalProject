@@ -1,47 +1,47 @@
 import 'package:flutter/material.dart';
 
-class PostAppBar extends StatelessWidget{
+class PostAppBar extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.pop(context);
             },
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
                   ),
                 ],
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.arrow_back,
                 size: 28,
               ),
             ),
           ),
           InkWell(
-            onTap: (){},
+            onTap: () {},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(color: Colors.black26, blurRadius: 6),
                 ],
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.favorite,
                 color: Colors.redAccent,
                 size: 28,

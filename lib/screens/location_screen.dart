@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
+import 'package:tugas3/screens/home_screen.dart';
 
 class LocationScreen extends StatelessWidget {
   final List<Map<String, dynamic>> locations = [
@@ -45,6 +46,24 @@ class LocationScreen extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
         iconTheme: const IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
+        elevation: 4,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(16),
+          ),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            // Arahkan ke HomePage
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+              (route) => false, // Menghapus semua rute sebelumnya
+            );
+          },
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -90,9 +109,10 @@ class LocationScreen extends StatelessWidget {
           },
         ),
       ),
-    bottomNavigationBar: HomeButtomBar(),  
+      bottomNavigationBar: HomeButtomBar(),
     );
   }
+
 
   void _showLocationDetail(BuildContext context, Map<String, dynamic> location) {
     showModalBottomSheet(
