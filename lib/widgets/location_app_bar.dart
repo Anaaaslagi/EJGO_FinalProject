@@ -30,12 +30,8 @@ class LocationAppBar extends StatelessWidget{
           ),
           Row(
             children: [
-              Icon(
-                Icons.location_on,
-                color: Colors.lightBlue.shade800,
-              ),
               Text(
-                "Jawa Timur", 
+                "Wishlist Destinasi Wisata", 
                 style: TextStyle(
                   fontSize: 18, 
                   fontWeight: FontWeight.w500,
