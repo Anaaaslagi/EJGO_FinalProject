@@ -10,7 +10,7 @@ class PostScreen extends StatelessWidget {
   final String address; 
   final String openingHours; 
 
-  PostScreen({
+  const PostScreen({
     required this.index, 
     required this.location, 
     required this.rating, 
@@ -34,7 +34,7 @@ class PostScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(90),
+        preferredSize: const Size.fromHeight(90),
         child: PostAppBar(),
       ),
       body: Container(

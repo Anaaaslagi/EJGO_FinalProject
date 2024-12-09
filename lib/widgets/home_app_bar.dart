@@ -4,17 +4,17 @@ class HomeAppBar extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
             onTap: (){},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
@@ -22,7 +22,7 @@ class HomeAppBar extends StatelessWidget{
                 ],
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.sort_rounded, 
                 size: 28,
               ),
@@ -34,7 +34,7 @@ class HomeAppBar extends StatelessWidget{
                 Icons.location_on,
                 color: Colors.lightBlue.shade800,
               ),
-              Text(
+              const Text(
                 "Jawa Timur", 
                 style: TextStyle(
                   fontSize: 18, 
@@ -46,10 +46,10 @@ class HomeAppBar extends StatelessWidget{
           InkWell(
             onTap: (){},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
@@ -57,7 +57,7 @@ class HomeAppBar extends StatelessWidget{
                 ],
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.search,
                 size: 28,
               ),

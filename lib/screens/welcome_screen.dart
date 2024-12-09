@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:tugas3/screens/home_screen.dart';
+import 'package:tugas3/widgets/home_buttom_bar.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/EJGO.png"),
             fit: BoxFit.cover,
@@ -25,17 +25,17 @@ class WelcomeScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => HomeBottomBar(),
                       ),
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 50),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Start',
                       style: TextStyle(
                         color: Colors.black54,

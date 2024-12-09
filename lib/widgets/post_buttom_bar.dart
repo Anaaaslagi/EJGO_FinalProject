@@ -7,7 +7,7 @@ class PostButtomBar extends StatelessWidget{
   final String address;
   final String openingHours;
 
-  PostButtomBar({
+  const PostButtomBar({
     required this.location, 
     required this.rating, 
     required this.description,
@@ -19,8 +19,8 @@ class PostButtomBar extends StatelessWidget{
   Widget build(BuildContext context){
     return Container(
       height: MediaQuery.of(context).size.height/2,
-      padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+      decoration: const BoxDecoration(
         color: Color(0xFFEDF2F6),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
@@ -30,7 +30,7 @@ class PostButtomBar extends StatelessWidget{
       child: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.only(),
+            padding: const EdgeInsets.only(),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
@@ -39,7 +39,7 @@ class PostButtomBar extends StatelessWidget{
                   children: [
                     Text(
                       location,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 23,
                         fontWeight: FontWeight.w600,
                       ),
@@ -47,14 +47,14 @@ class PostButtomBar extends StatelessWidget{
                     // SizedBox(height: 10),
                     Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           color: Colors.amber,
                           size: 25,
                         ),
                         Text(
                           rating.toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -62,44 +62,44 @@ class PostButtomBar extends StatelessWidget{
                     ),
                   ],
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 Text(
                   description,
-                  style: TextStyle(color: Colors.black54, fontSize: 16),
+                  style: const TextStyle(color: Colors.black54, fontSize: 16),
                   textAlign: TextAlign.justify,
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
               // Alamat
-              Text(
+              const Text(
                 "Alamat:",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                   address,
-                  style: TextStyle(color: Colors.black54, fontSize: 16),
+                  style: const TextStyle(color: Colors.black54, fontSize: 16),
                 ),
-                SizedBox(height: 15),
-                Text(
+                const SizedBox(height: 15),
+                const Text(
                 "Jam Buka:",
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
                 Text(
                 openingHours,
-                style: TextStyle(color: Colors.black54, fontSize: 16),
+                style: const TextStyle(color: Colors.black54, fontSize: 16),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(right: 5),
+                      padding: const EdgeInsets.only(right: 5),
                       child: Expanded(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
@@ -113,7 +113,7 @@ class PostButtomBar extends StatelessWidget{
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 5),
+                      padding: const EdgeInsets.only(right: 5),
                       child: Expanded(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
@@ -130,17 +130,17 @@ class PostButtomBar extends StatelessWidget{
                       alignment: Alignment.center,
                       width: 120,
                       height: 90,
-                      margin: EdgeInsets.only(right: 5),
+                      margin: const EdgeInsets.only(right: 5),
                       decoration: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage("images/city6.jpg"),
                           fit: BoxFit.cover,
                           opacity: 0.4,
                         ),
                       ),
-                      child: Text(
+                      child: const Text(
                         "10+",
                         style: TextStyle(
                           color: Colors.white,

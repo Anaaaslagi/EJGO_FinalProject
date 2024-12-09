@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/widgets/location_app_bar.dart';
 
 class LocationScreen extends StatefulWidget {
@@ -53,7 +52,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(90.0),
+        preferredSize: const Size.fromHeight(90.0),
         child: LocationAppBar(),
       ),
       body: Padding(
@@ -97,11 +96,11 @@ class _LocationScreenState extends State<LocationScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
-                          icon: Icon(Icons.edit),
+                          icon: const Icon(Icons.edit),
                           onPressed: () => _editLocation(context, index),
                         ),
                         IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           onPressed: () => _deleteLocation(index),
                         ),
                       ],
@@ -113,10 +112,9 @@ class _LocationScreenState extends State<LocationScreen> {
           },
         ),
       ),
-      bottomNavigationBar: HomeButtomBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _addLocationForm(context),
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -277,7 +275,7 @@ class _AddLocationFormState extends State<AddLocationForm> {
         backgroundColor: Colors.grey[100],
         title: Text(widget.initialLocation == null ? 'Add Location' : 'Edit Location'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context); // Pops the current screen, returning to the previous screen.
           },

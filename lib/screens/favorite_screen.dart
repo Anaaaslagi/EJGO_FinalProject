@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/favorite_app_bar.dart';
-import 'package:tugas3/widgets/home_buttom_bar.dart';
 import 'package:tugas3/screens/post_screen.dart';
+
 class FavoriteScreen extends StatelessWidget {
   final List<Map<String, String>> favoritePlaces = [
     {
@@ -49,22 +49,13 @@ class FavoriteScreen extends StatelessWidget {
       "description":
           "Telaga Sarangan adalah danau pegunungan yang sejuk dan menyegarkan yang dikelilingi oleh pemandangan yang indah.", 
     },
-    {
-      "name": "Jembatan Suramadu",
-      "address": "Jembatan Suramadu, Surabaya-Madura, Jawa Timur",
-      "hours": "24 Jam",
-      "image": "images/img6.jpeg",
-      "rating": "4.6",
-      "description":
-          "Jembatan Suramadu adalah jembatan penting yang menghubungkan Surabaya dan Madura, menawarkan pemandangan yang menakjubkan di malam hari.", 
-    },
   ];
 
  @override
   Widget build(BuildContext context) {
    return Scaffold(
       appBar: PreferredSize(
-      preferredSize: Size.fromHeight(90.0),
+      preferredSize: const Size.fromHeight(90.0),
       child: FavoriteAppBar(),
     ),
       body: ListView.builder(
@@ -113,7 +104,6 @@ class FavoriteScreen extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: HomeButtomBar(),
     );
   }
 }

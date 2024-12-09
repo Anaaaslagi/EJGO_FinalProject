@@ -4,17 +4,17 @@ class FavoriteAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           InkWell(
             onTap: () {},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
@@ -29,8 +29,8 @@ class FavoriteAppBar extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 10), // Menambahkan jarak antara ikon dan teks
-          Text(
+          const SizedBox(width: 10), // Menambahkan jarak antara ikon dan teks
+          const Text(
             "Favorit Anda", 
             style: TextStyle(
               fontSize: 18, 

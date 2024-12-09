@@ -4,17 +4,17 @@ class LocationAppBar extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Padding(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(
             onTap: (){},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
@@ -22,13 +22,13 @@ class LocationAppBar extends StatelessWidget{
                 ],
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.sort_rounded, 
                 size: 28,
               ),
             ),
           ),
-          Row(
+          const Row(
             children: [
               Text(
                 "Wishlist Destinasi Wisata", 
@@ -42,10 +42,10 @@ class LocationAppBar extends StatelessWidget{
           InkWell(
             onTap: (){},
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black26,
                     blurRadius: 6,
@@ -53,7 +53,7 @@ class LocationAppBar extends StatelessWidget{
                 ],
                 borderRadius: BorderRadius.circular(15),
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.search,
                 size: 28,
               ),
