@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tugas3/widgets/home_buttom_bar.dart';
-import 'package:tugas3/screens/home_screen.dart';
 import 'package:tugas3/widgets/location_app_bar.dart';
 
 class LocationScreen extends StatefulWidget {
